@@ -1,0 +1,7 @@
+{
+  "code": "import { ui } from \"./../ui/layaMaxUI\";\r\nimport { configMgr } from \"./configMgr\";\r\nexport default class GameUI extends ui.test.gameUI {\r\n    constructor() {\r\n        super();\r\n    }\r\n    onEnable() {\r\n        console.log(\"ready\");\r\n        console.log(configMgr.instance.getLevel[\"1\"]);\r\n        this.gameStart();\r\n    }\r\n    gameStart() {\r\n        this.initTimu();\r\n        this.initAns();\r\n    }\r\n    initTimu() {\r\n        let a = Math.ceil(Math.random() * 10);\r\n        this.firnum = a;\r\n        console.log(a);\r\n        this.fir.text = this.firnum.toString();\r\n        let b = Math.ceil(Math.random() * 10);\r\n        this.secnum = b;\r\n        console.log(b);\r\n        this.sec.text = this.secnum.toString();\r\n        this.answer = a + b;\r\n    }\r\n    initAns() {\r\n        let ans = [0, 0, 0, 0];\r\n        ans[0] = Math.ceil(Math.random() * this.answer + 5);\r\n        let cnt = 0, n;\r\n        while (cnt < 4) {\r\n            n = Math.ceil(Math.random() * 4);\r\n            for (let i = 0; i < cnt; i++) {\r\n                if (ans[i] == n)\r\n                    continue;\r\n            }\r\n        }\r\n        console.log(ans);\r\n    }\r\n}\r\n",
+  "references": [
+    "/Users/yanhui/workspaces/gitlab/calute/src/ui/layaMaxUI.ts",
+    "/Users/yanhui/workspaces/gitlab/calute/src/script/configMgr.ts"
+  ]
+}

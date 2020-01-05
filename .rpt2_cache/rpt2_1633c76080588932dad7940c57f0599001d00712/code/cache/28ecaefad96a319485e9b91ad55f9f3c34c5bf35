@@ -1,0 +1,4 @@
+{
+  "code": "export class LevelsConfig {\r\n    constructor(path) {\r\n        this.cPath = path;\r\n        Laya.loader.load(this.cPath, Laya.Handler.create(this, this.onLoaded));\r\n    }\r\n    onLoaded() {\r\n        this.json = Laya.loader.getRes(this.cPath);\r\n    }\r\n}\r\n",
+  "references": []
+}

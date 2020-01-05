@@ -1,0 +1,6 @@
+{
+  "code": "import { LevelsConfig } from \"./LevelsConfig\";\r\nexport class configMgr {\r\n    constructor() {\r\n        this._levels = null;\r\n        this._cfgPath = [\r\n            \"res/data/001.json\"\r\n        ];\r\n        configMgr._instance = this;\r\n        this._levels = new LevelsConfig(this._cfgPath[0]);\r\n    }\r\n    static get instance() {\r\n        return configMgr._instance;\r\n    }\r\n    getLevel(num) {\r\n        return this._levels.json[num.toString()];\r\n    }\r\n}\r\nconfigMgr._instance = null;\r\n",
+  "references": [
+    "/Users/yanhui/workspaces/gitlab/calute/src/script/LevelsConfig.ts"
+  ]
+}
